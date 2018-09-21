@@ -1,0 +1,11 @@
+.train-tickets-button-default {
+  margin: 2vh 1vw;
+  width: 8vw;
+  height: 4vh;
+  line-height: 4vh;
+  font-size: 1vw;
+  background-color: dodgerblue;
+  border-radius: 0.5vw;
+  color: white;
+  text-align: center;
+}

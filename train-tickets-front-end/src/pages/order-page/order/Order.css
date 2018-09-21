@@ -1,0 +1,9 @@
+.homepage{
+  text-align: center;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 92vh;
+}

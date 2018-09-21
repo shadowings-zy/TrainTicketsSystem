@@ -1,0 +1,40 @@
+.login {
+  width: 50vw;
+  height: 50vh;
+  margin: 25vh 25vw;
+  font-size: 2vw;
+}
+
+.login-title {
+  width: 50vw;
+  height: 5vh;
+  margin: 1vh 0;
+  text-align: center;
+  color: grey;
+}
+
+.login-input {
+  width: 30vw;
+  height: 4vh;
+  margin: 1vh 10vw;
+}
+
+.login-button {
+  width: 10vw;
+  height: 4vh;
+  margin: 1vh 20vw;
+  background-color: dodgerblue;
+  border-radius: 0.5vw;
+  color: white;
+  font-size: 1vw;
+  line-height: 4vh;
+}
+
+.go-register {
+  text-decoration: underline;
+  color: grey;
+  font-size: 1vw;
+  width: 50vw;
+  height: 4vh;
+  margin: 10vh 0;
+}

@@ -1,0 +1,21 @@
+.city-select {
+  margin: 5vh 0 0 5vw;
+  width: 80vw;
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.city-selector {
+  margin: 2vh 1vw;
+  width: 12vw;
+  height: 4vh;
+}
+
+.city-selector-content {
+  margin: 2vh 1vw;
+  width: 3vw;
+  height: 4vh;
+  line-height: 4vh;
+  font-size: 1vw;
+}

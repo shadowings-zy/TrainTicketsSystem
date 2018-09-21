@@ -1,0 +1,15 @@
+.order-select-detail {
+  width: 70vw;
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  border-bottom: black solid 1px;
+}
+
+.order-select-item {
+  width: 10vw;
+  height: 8vh;
+  line-height: 8vh;
+  font-size: 1vw;
+  text-align: center;
+}

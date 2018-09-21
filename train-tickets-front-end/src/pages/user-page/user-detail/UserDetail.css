@@ -1,0 +1,46 @@
+.user {
+  margin: 2vh 2vw;
+  width: 86vw;
+  height: 88vh;
+}
+.tips {
+  width: 86vw;
+  height: 5vh;
+  line-height: 5vh;
+  font-size: 1vw;
+  text-align: center;
+}
+.user-input {
+  margin: 2vh 0;
+  width: 86vw;
+  height: 5vh;
+}
+.status-select {
+  margin: 2vh 0;
+  width: 50vw;
+  display: flex;
+  flex-direction: row;
+}
+.status-select-text {
+  height: 5vh;
+  text-align: left;
+  font-size: 1vw;
+  color: black;
+  line-height: 5vh;
+}
+.status-select-content {
+  width: 30vw;
+  height: 5vh;
+  font-size: 1vw;
+}
+.update-user {
+  width: 10vw;
+  height: 5vh;
+  margin: 5vh auto;
+  padding: 0;
+  background-color: dodgerblue;
+  border-radius: 0.5vw;
+  color: white;
+  font-size: 1vw;
+  line-height: 5vh;
+}

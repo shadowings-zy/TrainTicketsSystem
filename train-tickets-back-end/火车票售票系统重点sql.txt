@@ -1,0 +1,35 @@
+//根据起至车站查询火车
+select a.train_id, train_name, a.stop_id as start_index, b.stop_id as end_index, a.station_name as start, b.station_name as end, a.arrive_time as start_time, b.arrive_time as end_time, (b.mileage - a.mileage) as mileage 
+from `12307`.stop as a,`12307`.stop as b,`12307`.train as c 
+where a.city_name = '沈阳' and b.city_name = '济南' and a.stop_id < b.stop_id and a.train_id = b.train_id and a.train_id = c.train_id and a.train_id not in (
+	select train_id
+	from `12307`.status
+	where date = '2019-12-12' and status = '停运')
+
+//根据起至车站查询换乘火车
+select a.train_id as first_tid, d.train_id as second_tid, e.train_name as first_tname, f.train_name as second_tname, b.station_name as transfer_station
+from `12307`.stop as a, `12307`.stop as b, `12307`.stop as c, `12307`.stop as d, `12307`.train as e, `12307`.train as f
+where a.city_name = '广州' and d.city_name = '长春' and a.train_id = b.train_id and b.station_name = c.station_name and c.train_id = d.train_id and b.train_id <> c.train_id and a.stop_id < b.stop_id and c.stop_id < d.stop_id and b.arrive_time < c.arrive_time
+and a.train_id not in (select train_id from `12307`.status where date = '2019-10-10' and status = '停运')
+and d.train_id not in (select train_id from `12307`.status where date = '2019-10-10' and status = '停运')
+and a.train_id = e.train_id and d.train_id = f.train_id
+
+//查询余票数量
+select t.train_id, s.seat_type, count(s.seat_type)
+from `12307`.train as t, `12307`.seat as s
+where t.train_id = 5 and t.train_id = s.train_id and s.seat_id not in (
+	select seat_id
+	from `12307`.order
+	where train_id = 5 and date = '2019-01-02' and ((start_stop_id >= 2 and start_stop_id < 3) or (end_stop_id > 2 and end_stop_id <= 3)))
+group by s.seat_type
+
+//查询余票具体座位情况
+select t.train_id, s.seat_id, s.carriage, s.seat_type, s.seat_location
+from `12307`.train as t, `12307`.seat as s
+where t.train_id = 1 and t.train_id = s.train_id and s.seat_id not in (
+	select seat_id
+	from `12307`.order
+	where train_id = 1 and date = '2019-01-01' and ((start_stop_id >= 0 and start_stop_id < 2) or (end_stop_id > 0 and end_stop_id <= 2)))
+
+//锁定座位（实际上就是插入一条订单）
+insert into `12307`.order (user_id, passenger_id, user_name, train_id, carriage, seat_type, seat_id, seat_location, start_stop_id, start_station_name, end_stop_id, end_station_name, date, create_at, status) values ('1', '000000000000000001', 'user1', '1', '1', '一等座', '0', '01A', '0', '沈阳北', 2, '深圳北', '2019-01-01', '2018-12-31 12:00:00', '未付款')
