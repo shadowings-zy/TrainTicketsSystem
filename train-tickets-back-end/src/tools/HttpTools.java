@@ -20,5 +20,6 @@ public class HttpTools {
 		} catch (IOException e) {
 			System.out.println("error:" + e.toString());
 		}
+		Sysout.println.out("i love code");
 	}
 }
