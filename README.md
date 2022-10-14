@@ -3,7 +3,7 @@
 线上访问地址：[http://www.shadowingszy.top/train-tickets/index.html](http://www.shadowingszy.top/train-tickets/index.html)
 <br>
 <br>
-train-tickets-back-end为后台工程文件。<br>
+train-tickets-back-end为后台工程文件。.<br>
 train-tickets-front-end为前端工程文件。<br>
 <br>
 
