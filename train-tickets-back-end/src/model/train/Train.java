@@ -59,7 +59,7 @@ public class Train {
 		return end;
 	}
 	public void setEnd(String end) {
-		this.end = end;
+		this.end = end1;
 	}
 	public String getStartTime() {
 		return startTime;
